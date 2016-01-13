@@ -1,0 +1,26 @@
+{
+  "name": "quorra-cli",
+  "version": "0.0.1-alpha",
+  "description": "Quorra command line interface.",
+  "main": "quorra.js",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "fs-extra": "^0.26.4"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quorrajs/Quorra-cli.git"
+  },
+  "keywords": [
+    "quorra",
+    "cli",
+    "positron"
+  ],
+  "author": "Harish Anchu <harishanchu@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quorrajs/Quorra-cli/issues"
+  },
+  "homepage": "https://github.com/quorrajs/Quorra-cli"
+}
