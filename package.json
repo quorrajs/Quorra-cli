@@ -3,6 +3,9 @@
   "version": "0.0.1-alpha",
   "description": "Quorra command line interface.",
   "main": "quorra.js",
+  "bin": {
+    "quorra": "quorra.js"
+  },
   "dependencies": {
     "commander": "^2.9.0",
     "fs-extra": "^0.26.4"
