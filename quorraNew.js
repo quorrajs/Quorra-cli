@@ -9,22 +9,25 @@
 var fs = require('fs-extra');
 var path = require('path');
 var exec = require('child_process').exec;
+var logger = require('./logger');
 
 function quorraNew(name, version) {
+    require('colors');
+
     var directory;
 
     verifyApplicationDoesntExist(directory = path.join(process.cwd(), name));
 
     version = version || 'latest';
 
-    console.info('Crafting application...');
+    logger.info('\r\nCrafting application...\r\n');
 
     download(version, directory, function(err){
         if(err) {
-            console.error(err);
+            logger.error(err);
             process.exit(1);
         } else {
-            console.info('Application ready! Build something amazing.');
+            logger.info('Application ready! Build something amazing.\r\n');
         }
     });
 
@@ -43,7 +46,7 @@ function verifyApplicationDoesntExist(directory) {
 
         // Is it a directory?
         if (stats.isDirectory()) {
-            console.error('Application already exists!');
+            logger.error('\r\nApplication already exists!\r\n');
             process.exit(1);
         }
     }
