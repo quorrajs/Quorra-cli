@@ -4,7 +4,7 @@
  * logger.js
  *
  * @author: Harish Anchu <harishanchu@gmail.com>
- * @copyright 2016, Harish Anchu. All rights reserved.
+ * @copyright (c) 2015-2016, Harish Anchu.
  * @license Licensed under MIT
  */
 var colors = require('colors');

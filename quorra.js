@@ -4,7 +4,7 @@
  * quorra.js
  *
  * @author: Harish Anchu <harishanchu@gmail.com>
- * @copyright 2016, Harish Anchu. All rights reserved.
+ * @copyright (c) 2015-2016, Harish Anchu.
  * @license Licensed under MIT
  */
 
@@ -23,13 +23,13 @@ program
 program
     .command('new <path_to_new_app> [version]')
     .description('Create a new Quorra application')
-    .action(require('./quorraNew'));
+    .action(require('./quorra-new'));
 
 //$ quorra ride
 
 program
     .command('ride')
     .description('Serve the application on the NodeJs server')
-    .action(require('./quorraRide'));
+    .action(require('./quorra-ride'));
 
 program.parse(process.argv);
