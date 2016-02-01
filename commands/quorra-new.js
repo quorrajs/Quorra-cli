@@ -11,7 +11,7 @@
 var fs = require('fs-extra');
 var path = require('path');
 var exec = require('child_process').exec;
-var logger = require('./logger');
+var logger = require('../logger');
 
 function quorraNew(name, version) {
     require('colors');

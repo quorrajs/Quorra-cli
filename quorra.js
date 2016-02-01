@@ -23,13 +23,13 @@ program
 program
     .command('new <path_to_new_app> [version]')
     .description('Create a new Quorra application')
-    .action(require('./quorra-new'));
+    .action(require('./commands/quorra-new'));
 
 //$ quorra ride
 
 program
     .command('ride')
     .description('Serve the application on the NodeJs server')
-    .action(require('./quorra-ride'));
+    .action(require('./commands/quorra-ride'));
 
 program.parse(process.argv);
