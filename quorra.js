@@ -25,11 +25,18 @@ program
     .description('Create a new Quorra application')
     .action(require('./commands/quorra-new'));
 
-//$ quorra ride
+//$ quorra ride [--env environment]
 
 program
     .command('ride')
     .description('Serve the application on the NodeJs server')
     .action(require('./commands/quorra-ride'));
+
+//$ quorra routes
+
+program
+    .command('routes')
+    .description('List all registered routes')
+    .action(require('./commands/quorra-routes'));
 
 program.parse(process.argv);
