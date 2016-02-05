@@ -4,14 +4,14 @@
  * quorra-new.js
  *
  * @author: Harish Anchu <harishanchu@gmail.com>
- * @copyright 2016, Harish Anchu. All rights reserved.
+ * @copyright (c) 2015-2016, Harish Anchu.
  * @license Licensed under MIT
  */
 
 var fs = require('fs-extra');
 var path = require('path');
 var exec = require('child_process').exec;
-var logger = require('./logger');
+var logger = require('../logger');
 
 function quorraNew(name, version) {
     require('colors');

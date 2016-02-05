@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
 /**
- * quorra-new.js
+ * quorra-ride.js
  *
  * @author: Harish Anchu <harishanchu@gmail.com>
- * @copyright 2016, Harish Anchu. All rights reserved.
+ * @copyright (c) 2015-2016, Harish Anchu.
  * @license Licensed under MIT
  */
 
 var path = require('path');
 var fs = require('fs');
-var logger = require('./logger');
+var logger = require('../logger');
 
 function quorraRide() {
     var appPath = process.cwd();
