@@ -7,9 +7,13 @@
     "quorra": "quorra.js"
   },
   "dependencies": {
+    "cli-table": "^0.3.1",
+    "cli-table2": "^0.2.0",
     "colors": "^1.1.2",
     "commander": "^2.9.0",
-    "fs-extra": "^0.26.4"
+    "fs-extra": "^0.26.4",
+    "lodash": "^4.2.1",
+    "remove": "^0.1.5"
   },
   "devDependencies": {},
   "repository": {

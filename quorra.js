@@ -30,6 +30,7 @@ program
 program
     .command('ride')
     .description('Serve the application on the NodeJs server')
+    .option('--env <environment>', 'Custom application environment')
     .action(require('./commands/quorra-ride'));
 
 //$ quorra routes
@@ -37,6 +38,8 @@ program
 program
     .command('routes')
     .description('List all registered routes')
+    .option('--name <name>', 'Filter the routes by name')
+    .option('--path <path>', 'Filter the routes by path')
     .action(require('./commands/quorra-routes'));
 
 program.parse(process.argv);
