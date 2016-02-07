@@ -59,4 +59,18 @@ program
     .option('--path <path>', 'Where to place the controller')
     .action(require('./commands/quorra-generate-controller'));
 
+//$ quorra up
+
+program
+    .command('up')
+    .description('Bring the application out of maintenance mode')
+    .action(require('./commands/quorra-up'));
+
+//$ quorra down
+
+program
+    .command('down')
+    .description('Put the application into maintenance mode')
+    .action(require('./commands/quorra-down'));
+
 program.parse(process.argv);
