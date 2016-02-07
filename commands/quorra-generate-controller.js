@@ -10,7 +10,7 @@ var helper = require('../util/helper');
 var logger = require('../util/logger');
 var _ = require('lodash');
 var path = require('path');
-var ControllerGenerator = require('../generator/ControllerGenerator');
+var ControllerGenerator = require('../controller-generator/ControllerGenerator');
 
 var ref = {};
 

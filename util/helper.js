@@ -12,7 +12,7 @@ var logger = require('./logger');
 
 var helper = {
     /**
-     * Check whether quorra application exists in specified location.
+     * Check whether Quorra application exists in specified location.
      *
      * @param appPath
      */
