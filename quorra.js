@@ -59,6 +59,15 @@ program
     .option('--path <path>', 'Where to place the controller')
     .action(require('./commands/quorra-generate-controller'));
 
+//$ quorra generate-middleware <name>
+
+program
+    .command('generate-middleware <name>')
+    .description('Create a new middleware')
+    .option('--path <path>', 'Where to place the middleware')
+    .action(require('./commands/quorra-generate-middleware'));
+
+
 //$ quorra up
 
 program

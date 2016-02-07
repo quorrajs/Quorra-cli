@@ -1,0 +1,19 @@
+function {{middleware}}(app, next){
+    // Quorra app instance
+    this.__app = app;
+
+    // Next middleware to execute
+    this.__next = next;
+
+    // Write your middleware initialization code here
+}
+
+{{middleware}}.prototype.handle = function(request, response) {
+
+    // handle requests here
+
+    this.__next.handle(request, response);
+};
+
+
+module.exports = {{middleware}};
