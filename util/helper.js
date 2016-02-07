@@ -30,6 +30,7 @@ var helper = {
             process.exit(1);
         }
     },
+
     /**
      * Load the Quorra application
      *
@@ -37,6 +38,60 @@ var helper = {
      */
     boot: function(appPath, callback) {
         require(path.join(appPath , 'bootstrap/start'))(callback);
+    },
+
+    /**
+     * Read the file and contents.
+     *
+     * @param {string} filePath
+     * @param {function} callback
+     * @return {object}
+     */
+    readFile: function(filePath, callback) {
+        fs.readFile(filePath, 'utf8', function(err, data){
+            if(err) {
+                logger.error('\nError reading file at '+filePath+'\n');
+
+                process.exit(1);
+            }
+
+            callback(data);
+        })
+    },
+
+    /**
+     * Get the file and contents synchronously.
+     *
+     * @param {string} filePath
+     * @return {object}
+     */
+    readFileSync: function(filePath) {
+        try {
+            return fs.readFileSync(filePath, 'utf8')
+        } catch(e) {
+            logger.error('\nError reading file at '+filePath+'\n');
+
+            process.exit(1);
+        }
+    },
+
+    /**
+     * Write contents to the file in given path
+     *
+     * @param {string} filePath
+     * @param {string} contents
+     * @param {function} callback
+     */
+    writeFile: function(filePath, contents, callback) {
+        fs.writeFile(filePath, contents, 'utf8', function(err) {
+            if(err) {
+                logger.error('\nError writing file to '+pathAndContents.path+'\n');
+
+                process.exit(1);
+            }
+
+            callback();
+        });
     }
 };
 
