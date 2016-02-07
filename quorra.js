@@ -42,4 +42,11 @@ program
     .option('--path <path>', 'Filter the routes by path')
     .action(require('./commands/quorra-routes'));
 
+//$ quorra generate-key
+
+program
+    .command('generate-key')
+    .description('Set the application key')
+    .action(require('./commands/quorra-generate-key'));
+
 program.parse(process.argv);

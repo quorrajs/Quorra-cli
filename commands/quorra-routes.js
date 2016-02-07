@@ -20,7 +20,7 @@ function quorraRoutes(options) {
 
     helper.verifyApplicationDoesExist(appPath);
 
-    boot(appPath, function(app){
+    helper.boot(appPath, function(app){
         var router = app.router;
         var routes = router.getRoutes().getRoutes();
         ref.app = app;
@@ -32,16 +32,6 @@ function quorraRoutes(options) {
             displayRoutes(getRoutes(routes, options));
         }
     });
-}
-
-/**
- * Load the Quorra application so that we can read the
- * registered routes.
- *
- * @return {void}
- */
-function boot(appPath, callback) {
-    require(path.join(appPath , 'bootstrap/start'))(callback);
 }
 
 /**

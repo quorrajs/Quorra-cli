@@ -29,6 +29,14 @@ var helper = {
 
             process.exit(1);
         }
+    },
+    /**
+     * Load the Quorra application
+     *
+     * @return {void}
+     */
+    boot: function(appPath, callback) {
+        require(path.join(appPath , 'bootstrap/start'))(callback);
     }
 };
 
