@@ -11,7 +11,7 @@ var logger = require('../util/logger');
 var path = require('path');
 var _ = require('lodash');
 var endOfLine = require('os').EOL;
-var fs = require('fs.extra');
+var fs = require('fs-extra');
 
 function ControllerGenerator() {
     /**

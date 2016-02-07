@@ -11,6 +11,11 @@ var fs = require('fs');
 var logger = require('./logger');
 
 var helper = {
+    /**
+     * Check whether quorra application exists in specified location.
+     *
+     * @param appPath
+     */
     verifyApplicationDoesExist: function(appPath) {
         // when no package.json file
         if (!fs.existsSync(path.join(appPath, 'package.json'))) {
