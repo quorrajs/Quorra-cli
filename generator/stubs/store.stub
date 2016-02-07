@@ -1,0 +1,10 @@
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param {object} request
+     * @param {object} response
+     */
+    this.store = function store(request, response)
+    {
+        //
+    };

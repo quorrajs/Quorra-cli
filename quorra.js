@@ -49,4 +49,14 @@ program
     .description('Set the application key')
     .action(require('./commands/quorra-generate-key'));
 
+//$ quorra generate-controller <name>
+
+program
+    .command('generate-controller <name>')
+    .description('Create a new resourceful controller')
+    .option('--only <only>', 'The methods that should be included')
+    .option('--except <except>', 'The methods that should be excluded')
+    .option('--path <path>', 'Where to place the controller')
+    .action(require('./commands/quorra-generate-controller'));
+
 program.parse(process.argv);

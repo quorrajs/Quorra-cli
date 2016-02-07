@@ -1,0 +1,11 @@
+    /**
+     * Display the specified resource.
+     *
+     * @param {object} request
+     * @param {object} response
+     * @param {number} id
+     */
+    this.show = function show(request, response, id)
+    {
+        //
+    };

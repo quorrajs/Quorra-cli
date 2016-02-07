@@ -1,0 +1,7 @@
+var BaseController = require('{{BaseController}}');
+
+var {{controller}}  = BaseController.extend(function(){
+{{methods}}
+});
+
+module.exports = {{controller}};

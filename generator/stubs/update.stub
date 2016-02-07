@@ -1,0 +1,11 @@
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param {object} request
+     * @param {object} response
+     * @param {number} id
+     */
+    this.update = function update(request, response, id)
+    {
+        //
+    };

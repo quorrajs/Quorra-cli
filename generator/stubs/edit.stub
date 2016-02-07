@@ -1,0 +1,11 @@
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param {object} request
+     * @param {object} response
+     * @param {number} id
+     */
+    this.edit = function edit(request, response, id)
+    {
+        //
+    };

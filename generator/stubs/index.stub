@@ -1,0 +1,10 @@
+    /**
+     * Display a listing of the resource.
+     *
+     * @param {object} request
+     * @param {object} response
+     */
+    this.index = function index(request, response)
+    {
+        //
+    };
