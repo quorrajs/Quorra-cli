@@ -9,7 +9,6 @@
  */
 
 var path = require('path');
-var fs = require('fs');
 var logger = require('../util/logger');
 var helper = require('../util/helper');
 

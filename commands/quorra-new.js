@@ -27,7 +27,14 @@ function quorraNew(name, version) {
             logger.error(err);
             process.exit(1);
         } else {
-            logger.info('Application ready! Build something amazing.\r\n');
+            generateKey(directory, function(err){
+                if(err) {
+                    logger.error(err);
+                    process.exit(1);
+                } else {
+                    logger.info('Application ready! Build something amazing.\r\n');
+                }
+            })
         }
     });
 
@@ -93,6 +100,22 @@ function download(version, directory, callback) {
                 callback()
             })
         });
+    });
+}
+
+/**
+ * Set application key
+ *
+ * @param {string} directory
+ * @param {function} callback
+ */
+function generateKey(directory, callback) {
+    exec('quorra generate-key', {cwd: directory}, function(err) {
+        if(err) {
+            return callback(err)
+        }
+
+        callback();
     });
 }
 
