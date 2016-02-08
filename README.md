@@ -1,8 +1,8 @@
 # Quorra CLI
 
-[Introduction](#introduction)
-[Installation](#installation)
-[Usage](#usage)
+ - [Introduction](#introduction)
+ - [Installation](#installation)
+ - [Usage](#usage)
 
 ## Introduction
 
