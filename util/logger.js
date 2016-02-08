@@ -7,6 +7,7 @@
  * @copyright (c) 2015-2016, Harish Anchu.
  * @license Licensed under MIT
  */
+
 var colors = require('colors');
 
 var logger = {

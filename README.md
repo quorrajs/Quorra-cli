@@ -1,18 +1,38 @@
-# quorra-cli
+# Quorra CLI
 
-Quorra CLI is the default installer for the Quorra Framework.
+[Introduction](#introduction)
+[Installation](#installation)
+[Usage](#usage)
 
-## Usage
+## Introduction
 
-Download the Quorra cli using npm.
+Quorra CLI provides a number of helpful commands for your use while developing your application.
+
+## Installation
+
+Install the Quorra cli using npm.
 
 ```
 npm install -g quorra-cli
 ```
 
-Once installed, the simple `quorra new` command will create a fresh Quorra installation in the directory you specify.
-For instance, `quorra new blog` would create a directory named `blog` containing a fresh Quorra installation with all
-dependencies installed.
+## Usage
+
+### Listing All Available Commands
+
+To view a list of all available Quorra commands, you may use the `--help` command:
+
+```
+quorra --help
+```
+### Viewing The Help Screen For A Command
+
+Every command also includes a help screen which displays and describes the command's available arguments and
+options. To view a help screen, simply follow the name of the command with `--help`:
+
+```
+quorra routes --help
+```
 
 ## License
 

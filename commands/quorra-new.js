@@ -4,8 +4,8 @@
  * quorra-new.js
  *
  * @author: Harish Anchu <harishanchu@gmail.com>
- * @copyright (c) 2015-2016, Harish Anchu.
- * @license Licensed under MIT
+ * @copyright Copyright (c) 2015-2016, QuorraJS.
+ * @license See LICENSE.txt
  */
 
 var fs = require('fs-extra');
