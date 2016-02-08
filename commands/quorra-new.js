@@ -82,17 +82,17 @@ function download(version, directory, callback) {
 
     exec(cmd, {cwd: directory}, function(err) {
         if(err) {
-            return callback(err)
+            return callback(err.message)
         }
 
         fs.rename(downloadPath, tempPath, function(err){
             if(err) {
-                return callback(err)
+                return callback(err.message)
             }
 
             fs.copy(path.join(tempPath, frameworkPckage), directory, function (err) {
                 if (err) {
-                    return callback(err);
+                    return callback(err.message);
                 }
 
                 fs.remove(tempPath);
@@ -112,7 +112,7 @@ function download(version, directory, callback) {
 function generateKey(directory, callback) {
     exec('quorra generate-key', {cwd: directory}, function(err) {
         if(err) {
-            return callback(err)
+            return callback(err.message)
         }
 
         callback();
