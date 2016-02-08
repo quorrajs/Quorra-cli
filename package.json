@@ -28,6 +28,9 @@
     "quorra.js"
   ],
   "author": "Harish Anchu <harishanchu@gmail.com>",
+  "contributors": [
+    "Nikhil Ben Kuruvilla <nikhil@nikhilben.com>"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/quorrajs/Quorra-cli/issues"
