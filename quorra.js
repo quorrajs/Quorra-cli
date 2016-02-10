@@ -11,7 +11,6 @@
 var program = require('commander');
 var packageInfo = require('./package.json');
 
-
 //$ quorra -v
 //$ quorra --version
 
@@ -83,3 +82,10 @@ program
     .action(require('./commands/quorra-down'));
 
 program.parse(process.argv);
+
+//$ quorra
+// If no command specified
+if (program.args.length === 0) {
+    // display help
+    program.help();
+}
