@@ -15,9 +15,9 @@ var helper = require('../util/helper');
 function quorraRide() {
     var appPath = process.cwd();
 
-    logger.info('\r\nStarting app...');
-
     helper.verifyApplicationDoesExist(appPath);
+
+    logger.info('\r\nStarting app...');
 
     ride(appPath);
 }

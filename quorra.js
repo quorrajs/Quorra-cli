@@ -10,6 +10,7 @@
 
 var program = require('commander');
 var packageInfo = require('./package.json');
+var argv = process.argv;
 
 //$ quorra -v
 //$ quorra --version
@@ -81,7 +82,14 @@ program
     .description('Put the application into maintenance mode')
     .action(require('./commands/quorra-down'));
 
-program.parse(process.argv);
+//$ quorra <unknown command>
+// Show help on unknown commands
+program
+    .on('*', function (userCommand) {
+        this.help();
+    });
+
+program.parse(argv);
 
 //$ quorra
 // If no command specified
