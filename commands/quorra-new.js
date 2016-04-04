@@ -12,10 +12,12 @@ var fs = require('fs-extra');
 var path = require('path');
 var exec = require('child_process').exec;
 var logger = require('../util/logger');
+var spinner = require('../util/spinner');
 
 function quorraNew(name, version) {
     var directory;
 
+    spinner.start();
     verifyApplicationDoesntExist(directory = path.join(process.cwd(), name));
 
     version = version || 'latest';
@@ -25,9 +27,12 @@ function quorraNew(name, version) {
     download(version, directory, function(err){
         if(err) {
             logger.error(err);
+            spinner.stop();
             process.exit(1);
         } else {
             generateKey(directory, function(err){
+                spinner.stop();
+
                 if(err) {
                     logger.error(err);
                     process.exit(1);
