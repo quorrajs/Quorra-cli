@@ -90,20 +90,40 @@ function download(version, directory, callback) {
             return callback(err.message)
         }
 
-        fs.rename(downloadPath, tempPath, function(err){
-            if(err) {
-                return callback(err.message)
+        try {
+            var stats = fs.lstatSync(path.join(downloadPath, frameworkPckage, 'node_modules'));
+
+            if (stats.isDirectory()) {
+                fs.rename(downloadPath, tempPath, function (err) {
+                    if (err) {
+                        return callback(err.message)
+                    }
+
+                    fs.copy(path.join(tempPath, frameworkPckage), directory, function (err) {
+                        if (err) {
+                            return callback(err.message);
+                        }
+
+                        fs.remove(tempPath);
+
+                        callback()
+                    });
+                });
+
+                return ;
+            }
+        } catch (e) {
+
+        }
+
+        fs.copy(path.join(downloadPath, frameworkPckage), directory, function (err) {
+            if (err) {
+                return callback(err.message);
             }
 
-            fs.copy(path.join(tempPath, frameworkPckage), directory, function (err) {
-                if (err) {
-                    return callback(err.message);
-                }
+            fs.remove(path.join(downloadPath, frameworkPckage));
 
-                fs.remove(tempPath);
-
-                callback()
-            })
+            callback()
         });
     });
 }
