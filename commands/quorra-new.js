@@ -74,57 +74,94 @@ function verifyApplicationDoesntExist(directory) {
  * @param  {function}  callback
  * @return {void}
  */
-
 function download(version, directory, callback) {
     var downloadPath = path.join(directory, 'node_modules');
-    var tempPath = path.join(directory, 'quorra_package_download');
-    var frameworkPckage = 'quorra';
     // Create directory
     fs.mkdirsSync(directory);
     fs.mkdirsSync(downloadPath);
 
-    var cmd = 'npm install '+ frameworkPckage +'@'+version;
+    var cmd = 'npm install quorra@'+version;
 
     exec(cmd, {cwd: directory}, function(err) {
         if(err) {
             return callback(err.message)
         }
 
-        try {
-            var stats = fs.lstatSync(path.join(downloadPath, frameworkPckage, 'node_modules'));
+        createApp(directory, downloadPath, callback);
+    });
+}
 
-            if (stats.isDirectory()) {
-                fs.rename(downloadPath, tempPath, function (err) {
+/**
+ * Structure Quorra application from downloaded quorra package.
+ *
+ * @param directory
+ * @param downloadPath
+ * @param callback
+ */
+function createApp(directory, downloadPath, callback) {
+    var tempPath = path.join(directory, 'quorra_package_download');
+    var frameworkPackage = 'quorra';
+
+    try {
+        var stats = fs.lstatSync(path.join(downloadPath, frameworkPackage, 'node_modules'));
+
+        if (stats.isDirectory()) {
+            fs.rename(downloadPath, tempPath, function (err) {
+                if (err) {
+                    return callback(err.message)
+                }
+
+                fs.copy(path.join(tempPath, frameworkPackage), directory, function (err) {
                     if (err) {
-                        return callback(err.message)
+                        return callback(err.message);
                     }
 
-                    fs.copy(path.join(tempPath, frameworkPckage), directory, function (err) {
-                        if (err) {
-                            return callback(err.message);
-                        }
+                    fs.remove(tempPath);
 
-                        fs.remove(tempPath);
-
-                        callback()
-                    });
+                    createPackageFile(directory, callback);
                 });
+            });
 
-                return ;
-            }
-        } catch (e) {
+            return ;
+        }
+    } catch (e) {
+    }
 
+    fs.copy(path.join(downloadPath, frameworkPackage), directory, function (err) {
+        if (err) {
+            return callback(err.message);
         }
 
-        fs.copy(path.join(downloadPath, frameworkPckage), directory, function (err) {
-            if (err) {
-                return callback(err.message);
-            }
+        fs.remove(path.join(downloadPath, frameworkPackage));
 
-            fs.remove(path.join(downloadPath, frameworkPckage));
+        createPackageFile(directory, callback);
+    });
+}
 
-            callback()
-        });
+/**
+ * Create package file for new application and add quorra dependencies.
+ *
+ * @param directory
+ * @param callback
+ */
+function createPackageFile(directory, callback) {
+    var quorraPackageInfo = require(path.join(directory, 'package.json'));
+    var appPackage = {
+        "name": path.basename(directory),
+        "version": "0.0.0",
+        "description": "My QuorraJS Application",
+        "scripts": {
+            "start": "quorra ride"
+        },
+        "dependencies": quorraPackageInfo.dependencies
+    };
+
+    fs.writeFile(path.join(directory, 'package.json'), JSON.stringify(appPackage, null, 4), function (err) {
+        if (err) {
+            return callback(err.message);
+        }
+
+        callback();
     });
 }
 
