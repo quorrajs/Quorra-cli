@@ -31,6 +31,7 @@ program
     .command('ride')
     .description('Serve the application on the NodeJs server')
     .option('--env <environment>', 'Custom application environment')
+    .option('--port <port>', 'Custom application port')
     .action(require('./commands/quorra-ride'));
 
 //$ quorra routes
