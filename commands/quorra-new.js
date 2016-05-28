@@ -150,10 +150,9 @@ function createPackageFile(directory, callback) {
         "name": path.basename(directory),
         "version": "0.0.0",
         "description": "My QuorraJS Application",
-        "scripts": {
-            "start": "quorra ride"
-        },
-        "dependencies": quorraPackageInfo.dependencies
+        "scripts": quorraPackageInfo.scripts,
+        "dependencies": quorraPackageInfo.dependencies,
+        "devDependencies": quorraPackageInfo.devDependencies
     };
 
     fs.writeFile(path.join(directory, 'package.json'), JSON.stringify(appPackage, null, 4), function (err) {
