@@ -1,6 +1,6 @@
 {
   "name": "quorra-cli",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "Quorra command line interface.",
   "main": "quorra.js",
   "bin": {
