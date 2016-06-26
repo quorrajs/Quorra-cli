@@ -15,6 +15,10 @@ var logger = {
         console.info(string.green);
     },
 
+    note: function (string) {
+        console.info(string.grey);
+    },
+
     line: function (string) {
         console.log(string);
     },

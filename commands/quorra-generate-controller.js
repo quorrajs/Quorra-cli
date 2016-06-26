@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 /**
  * quorra-generate-controller.js
  *

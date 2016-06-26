@@ -34,6 +34,15 @@ program
     .option('--port <port>', 'Custom application port')
     .action(require('./commands/quorra-ride'));
 
+//$ quorra console
+
+program
+    .command('console')
+    .description('Serve the application on the NodeJs server in interactive mode')
+    .option('--env <environment>', 'Custom application environment')
+    .option('--port <port>', 'Custom application port')
+    .action(require('./commands/quorra-console'));
+
 //$ quorra routes
 
 program
