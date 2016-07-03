@@ -11,19 +11,26 @@
 var path = require('path');
 var logger = require('../util/logger');
 var helper = require('../util/helper');
+var Watcher = require('../util/Watcher');
 
-function quorraRide() {
+function quorraRide(options) {
     var appPath = process.cwd();
 
     helper.verifyApplicationDoesExist(appPath);
 
-    logger.info('\r\nStarting app...');
+    logger.success('\r\nStarting app...');
 
-    ride(appPath);
+    ride(appPath, options.watch);
 }
 
-function ride(appPath) {
-    require(path.join(appPath, 'index.js'));
+function ride(appPath, watch) {
+    helper.boot(appPath, function (app) {
+        app.listen(function (server) {
+            if(watch) {
+                (new Watcher(app, app.config.get('watch'), app.path.base)).watch();
+            }
+        });
+    });
 }
 
 module.exports = quorraRide;

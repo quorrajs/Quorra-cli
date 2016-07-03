@@ -22,12 +22,12 @@ function up() {
         fs.unlink(path.join(app.path.storage, 'meta', 'down'), function(err){
             if(err) {
                 if(err.code === 'ENOENT') {
-                    logger.info('\nApplication is now live.\n');
+                    logger.success('\nApplication is now live.\n');
                 } else {
                     logger.error('\nUnable to delete file: ' + path.join(app.path.storage, 'meta', 'down') + '\n');
                 }
             } else {
-                logger.info('\nApplication is now live.\n');
+                logger.success('\nApplication is now live.\n');
             }
         })
     });

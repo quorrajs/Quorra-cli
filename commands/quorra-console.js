@@ -18,11 +18,11 @@ function quorraConsole() {
 
     helper.verifyApplicationDoesExist(appPath);
 
-    logger.info('\r\nStarting app in interactive mode...');
+    logger.success('\r\nStarting app in interactive mode...');
 
     helper.boot(appPath, function (app) {
         app.listen(function (server) {
-            logger.info('\r\nWelcome to the Quorra console.');
+            logger.success('\r\nWelcome to the Quorra console.');
             logger.note('( to exit, type <CTRL>+<C> )\r\n');
 
             repl.start({

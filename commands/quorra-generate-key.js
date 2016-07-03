@@ -37,7 +37,7 @@ function generateKey() {
             contents = contents.replace(config.get('app').key, key) ;
 
             helper.writeFile(filePath, contents, function() {
-                logger.info("\nApplication key ["+ key +"] set successfully.\n");
+                logger.success("\nApplication key ["+ key +"] set successfully.\n");
             });
         });
     });

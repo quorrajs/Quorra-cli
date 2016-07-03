@@ -7,6 +7,7 @@
     "quorra": "quorra.js"
   },
   "dependencies": {
+    "chokidar": "^1.6.0",
     "cli-table": "~0.3.1",
     "cli-table2": "~0.2.0",
     "colors": "~1.1.2",
@@ -36,6 +37,5 @@
     "url": "https://github.com/quorrajs/Quorra-cli/issues"
   },
   "homepage": "https://github.com/quorrajs/Quorra-cli",
-  "scripts": {
-  }
+  "scripts": {}
 }

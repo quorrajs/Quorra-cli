@@ -22,7 +22,7 @@ function quorraNew(name, version) {
 
     version = version || 'latest';
 
-    logger.info('\r\nCrafting application...\r\n');
+    logger.success('\r\nCrafting application...\r\n');
 
     download(version, directory, function(err){
         if(err) {
@@ -37,7 +37,7 @@ function quorraNew(name, version) {
                     logger.error(err);
                     process.exit(1);
                 } else {
-                    logger.info('Application ready! Build something amazing.\r\n');
+                    logger.success('Application ready! Build something amazing.\r\n');
                 }
             })
         }

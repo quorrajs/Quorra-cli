@@ -33,7 +33,7 @@ function generateController(name, options) {
         // place based on the namespace of this controller specified by commands.
         var generator = new ControllerGenerator();
         generator.make(name, app.path.app, generatePath, options, function(){
-            logger.info('\nController created successfully!\n');
+            logger.success('\nController created successfully!\n');
         });
     });
 }

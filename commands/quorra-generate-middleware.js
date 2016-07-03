@@ -29,7 +29,7 @@ function generateMiddleware(name, options) {
         // Finally, we're ready to generate the actual middleware file on disk and let
         // the developer start using it.
         generate(name, generatePath, function(){
-            logger.info('\nMiddleware created successfully!\n');
+            logger.success('\nMiddleware created successfully!\n');
         });
     });
 }

@@ -32,6 +32,7 @@ program
     .description('Serve the application on the NodeJs server')
     .option('--env <environment>', 'Custom application environment')
     .option('--port <port>', 'Custom application port')
+    .option('--watch', 'Watch for file changes and reboot')
     .action(require('./commands/quorra-ride'));
 
 //$ quorra console

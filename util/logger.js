@@ -12,6 +12,10 @@ var colors = require('colors');
 
 var logger = {
     info: function (string) {
+        console.info(string.blue);
+    },
+
+    success: function (string) {
         console.info(string.green);
     },
 
@@ -19,8 +23,8 @@ var logger = {
         console.info(string.grey);
     },
 
-    line: function (string) {
-        console.log(string);
+    line: function () {
+        console.log.apply(console, arguments)
     },
 
     warn: function (string) {
