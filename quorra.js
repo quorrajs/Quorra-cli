@@ -78,7 +78,6 @@ program
     .option('--path <path>', 'Where to place the middleware')
     .action(require('./commands/quorra-generate-middleware'));
 
-
 //$ quorra up
 
 program
@@ -94,10 +93,10 @@ program
     .action(require('./commands/quorra-down'));
 
 //$ quorra <unknown command>
-// Show help on unknown commands
+// User command or show help on unknown commands
 program
-    .on('*', function (userCommand) {
-        this.help();
+    .on('*', function(cmd) {
+        require('./commands/quorra-command')(cmd, this);
     });
 
 program.parse(argv);
