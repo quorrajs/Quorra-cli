@@ -15,6 +15,7 @@ const helper = require('../util/helper');
 function quorraCommand(commandName, self) {
     const appPath = process.cwd();
     const argv = process.argv;
+    commandName = commandName[0];
 
     // Verify application
     helper.verifyApplicationDoesExist(appPath);
@@ -45,10 +46,11 @@ function quorraCommand(commandName, self) {
                 return;
             }
         });
-        let userInputs = argv.splice(cmdIndex + 1);
-        
+        const userArgv = argv.splice(cmdIndex + 1);
+
+        // Execute command
         try {
-            Command.run(commandName);
+            Command.run(commandName, {}, userArgv);
         } catch (err) {
             logger.error(err.toString());
         }
