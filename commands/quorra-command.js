@@ -8,13 +8,13 @@
  * @license See LICENSE.txt
  */
 
-const path = require('path');
-const logger = require('../util/logger');
-const helper = require('../util/helper');
+var path = require('path');
+var logger = require('../util/logger');
+var helper = require('../util/helper');
 
 function quorraCommand(commandName, self) {
-    const appPath = process.cwd();
-    const argv = process.argv;
+    var appPath = process.cwd();
+    var argv = process.argv;
     commandName = commandName[0];
 
     // Verify application
@@ -22,13 +22,13 @@ function quorraCommand(commandName, self) {
 
     // First check if it's a user command
     helper.boot(appPath, function(app) {
-        const Command = app.command;
-        const enabledCommands = require(path.join(app.path.app, 'console', 'kernel')).commands;
+        var Command = app.command;
+        var enabledCommands = require(path.join(app.path.app, 'console', 'kernel')).commands;
 
         // Check if command exists
-        let commandFound = false;
-        enabledCommands.some(cmd => {
-            let signature = new (require(path.join(app.path.base, cmd)))().signature;
+        var commandFound = false;
+        enabledCommands.some(function (cmd) {
+            var signature = new (require(path.join(app.path.base, cmd)))().signature;
             if (typeof signature !== 'undefined' && signature.split(' ')[0] == commandName) {
                 commandFound = true;
                 return true;
@@ -39,14 +39,14 @@ function quorraCommand(commandName, self) {
         }
 
         // Find index of the user command to trim the array for the user inputs
-        let cmdIndex = false;
-        argv.some((name, index) => {
+        var cmdIndex = false;
+        argv.some(function (name, index) {
             if (name == commandName) {
                 cmdIndex = index;
                 return;
             }
         });
-        const userArgv = argv.splice(cmdIndex + 1);
+        var userArgv = argv.splice(cmdIndex + 1);
 
         // Execute command
         try {
