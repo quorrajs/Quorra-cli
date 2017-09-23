@@ -1,0 +1,10 @@
+/**
+ * Determine whether the user can delete the {{dummyModel}}.
+ *
+ * @param {object} user - model instance
+ * @param {object} {{dummyModel}} - model instance
+ * @param {function} callback
+ */
+{{policy}}.prototype.delete = function create(user, {{dummyModel}}, callback) {
+    //
+};

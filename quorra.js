@@ -70,6 +70,17 @@ program
     .option('--path <path>', 'Where to place the controller')
     .action(require('./commands/quorra-generate-controller'));
 
+//$ quorra generate-policy <name>
+
+program
+    .command('generate-policy <name>')
+    .description('Create a new policy class')
+    .option('--model <model>', 'The model that the policy applies to')
+    .option('--only <only>', 'The methods that should be included')
+    .option('--except <except>', 'The methods that should be excluded')
+    .option('--path <path>', 'Where to place the policy')
+    .action(require('./commands/quorra-generate-policy'));
+
 //$ quorra generate-middleware <name>
 
 program

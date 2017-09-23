@@ -1,0 +1,10 @@
+/**
+ * Determine whether the user can view the {{dummyModel}}.
+ *
+ * @param {object} user - model instance
+ * @param {object} {{dummyModel}} - model instance
+ * @param {function} callback
+ */
+{{policy}}.prototype.view = function create(user, {{dummyModel}}, callback) {
+    //
+};

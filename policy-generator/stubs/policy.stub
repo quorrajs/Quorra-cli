@@ -1,0 +1,5 @@
+function {{policy}}() {
+
+}
+{{methods}}
+module.exports = {{policy}};

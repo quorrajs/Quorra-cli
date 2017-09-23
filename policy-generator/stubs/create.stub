@@ -1,0 +1,9 @@
+/**
+ * Determine whether the user can create {{dummyPluralModel}}.
+ *
+ * @param {object} user model instance
+ * @param {function} callback
+ */
+{{policy}}.prototype.create = function create(user, callback) {
+    //
+};
