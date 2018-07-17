@@ -12,7 +12,7 @@ var path = require('path');
 var logger = require('../util/logger');
 var helper = require('../util/helper');
 var _ = require('lodash');
-var Table = require('cli-table2');
+var Table = require('cli-table3');
 
 var ref = {};
 
